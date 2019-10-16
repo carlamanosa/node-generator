@@ -30,6 +30,7 @@ async function gitHubInfo(username) {
       numRepos: user.public_repos,
       stars,
       followers: user.followers,
+      following: user.following,
       email: user.email
     }
     console.log(gituser);
@@ -55,15 +56,53 @@ function generateHTML(gotGitHub) {
   <title>Document</title>
 </head>
 <body>
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid" style="background-color: #F5C1A1;">
   <div class="container">
-    <h1 class="display-4">Hi! My name is ${gotGitHub.name}</h1>
-    <p class="lead">I am from ${gotGitHub.location}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${gotGitHub.link}</li>
-    </ul>
+  <div class="card" style="width: 18rem;margin: 0 auto;">
+  <img class="card-img-top" src="${gotGitHub.bioImg}">
+</div>
+<br>
+    <h1 class="display-4" style="text-align: center;color: #C16025;">Hi! My name is ${gotGitHub.name}</h1>
+    <br>
+    <p class="lead" style="text-align: center;color: #C16025;">I am from ${gotGitHub.location}.</p>
+  
+    <a href="${gotGitHub.link}" style="color: white;text-align: center;"><strong>Github</strong></a>
+    <a href="${gotGitHub.blog}" style="color: white;text-align: center;"><strong>LinkedIn</strong></a>
+
   </div>
+</div>
+<div class="row">
+<div class="card col-6" style="width: 18rem;color: white;background-color: #DFAC78">
+        <div class="card-body" style="text-align: center;">
+            <h2>Public Repositories</h2>
+            <p><strong>${gotGitHub.numRepos}</strong></p>
+        </div>
+    </div>
+
+    <div class="card col-6" style="width: 18rem;color: white;background-color: #DFAC78">
+        <div class="card-body" style="text-align: center;">
+            <h2>Followers</h2>
+            <p><strong>${gotGitHub.followers}</strong></p>
+
+        </div>
+    </div>
+  </div>
+<div class="row">
+    <div class="card col-6" style="width: 18rem;color: white;background-color: #DFAC78">
+        <div class="card-body" style="text-align: center;">
+            <h2>GitHub Stars</h2>
+            <p><strong>${gotGitHub.stars}</strong></p>
+
+        </div>
+    </div>
+
+    <div class="card col-6" style="width: 18rem;color: white;background-color: #DFAC78">
+        <div class="card-body" style="text-align: center;">
+            <h2>Following</h2>
+            <p><strong>${gotGitHub.following}</strong></p>
+
+        </div>
+    </div>
 </div>
 </body>
 </html>`;
