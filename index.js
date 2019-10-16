@@ -66,8 +66,8 @@ function generateHTML(gotGitHub) {
     <br>
     <p class="lead" style="text-align: center;color: #C16025;">I am from ${gotGitHub.location}.</p>
   
-    <a href="${gotGitHub.link}" style="color: white;text-align: center;">Github</a>
-    <a href="${gotGitHub.blog}" style="color: white;text-align: center;">LinkedIn</a>
+    <a href="${gotGitHub.link}" style="color: white;text-align: center;"><strong>Github</strong></a>
+    <a href="${gotGitHub.blog}" style="color: white;text-align: center;"><strong>LinkedIn</strong></a>
 
   </div>
 </div>
