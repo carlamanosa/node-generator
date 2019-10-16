@@ -30,6 +30,7 @@ async function gitHubInfo(username) {
       numRepos: user.public_repos,
       stars,
       followers: user.followers,
+      following: user.following,
       email: user.email
     }
     console.log(gituser);
@@ -59,12 +60,42 @@ function generateHTML(gotGitHub) {
   <div class="container">
     <h1 class="display-4">Hi! My name is ${gotGitHub.name}</h1>
     <p class="lead">I am from ${gotGitHub.location}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
+    <h3><span class="badge badge-secondary">Contact Me</span></h3>
     <ul class="list-group">
       <li class="list-group-item">My GitHub username is ${gotGitHub.link}</li>
     </ul>
   </div>
 </div>
+<div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2>Public Repositories</h2>
+            <p><strong>${gotGitHub.numRepos}</strong></p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2>Followers</h2>
+            <p><strong>${gotGitHub.followers}</strong></p>
+
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2>GitHub Stars</h2>
+            <p><strong>${gotGitHub.stars}</strong></p>
+
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2>Following</h2>
+            <p><strong>${gotGitHub.following}</strong></p>
+
+        </div>
+    </div>
 </body>
 </html>`;
 }
